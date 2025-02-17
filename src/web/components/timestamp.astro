@@ -1,12 +1,15 @@
 ---
-import type { DateRange } from '@/types/shared';
-import formatDateRange from '@/utils/format-date-range';
 import Typography from './typography.astro';
+import formatDateRangeEn from '@/utils/format-date-range_eng';
+import formatDateRangeEs from '@/utils/format-date-range_esp';
 
-export interface Props {
-  dates: DateRange;
-}
 const { dates } = Astro.props;
+
+// Obtener el idioma almacenado en localStorage o usar 'es' por defecto
+const lang = typeof window !== 'undefined' && localStorage.getItem('lang') === 'eng' ? 'eng' : 'es';
+
+// Seleccionar la función correcta según el idioma
+const formatDateRange = lang === 'es' ? formatDateRangeEn : formatDateRangeEs;
 ---
 
 <Typography variant="item-subtitle-secondary">

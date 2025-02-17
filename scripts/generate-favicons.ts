@@ -1,5 +1,5 @@
 import { favicons, config as faviconsConfig, FaviconFile, FaviconImage } from 'favicons';
-import config from '../src/data/config';
+import config from '../src/data/config_esp';
 import { mkdir, writeFile, rm } from 'fs/promises';
 import { existsSync } from 'fs';
 

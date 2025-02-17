@@ -1,6 +1,6 @@
 import { format, differenceInYears, differenceInMonths } from 'date-fns';
 import type { DateRange } from '@/types/shared';
-import config from '@/data/config';
+import config from '@/data/config_eng';
 
 const { locale, dateFormat, translations } = config.i18n;
 

@@ -1,8 +1,8 @@
 import type { ReadonlyDeep } from 'type-fest';
 import type { Data } from '@/types/data';
 import transformData from './transform-data';
-import configData from '../config';
-import sectionsData from '../sections';
+import configData from '../config_esp';
+import sectionsData from '../sections/index_esp';
 
 const data = { config: configData, sections: sectionsData } as const satisfies ReadonlyDeep<Data>;
 
