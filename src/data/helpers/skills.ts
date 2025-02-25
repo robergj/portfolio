@@ -25,6 +25,20 @@ export const git = createSkillFactory({
   url: 'https://git-scm.com/',
 });
 
+export const android = createSkillFactory({
+  name: 'Android',
+  icon: 'fa:android',
+  iconColor: '#65A30D',
+  url: 'https://www.android.com',
+});
+
+export const mqtt = createSkillFactory({
+  name: 'MQTT',
+  icon: 'simple-icons:mqtt',
+  iconColor: '#C026D3',
+  url: 'https://mqtt.org',
+});
+
 export const oracle = createSkillFactory({
   name: 'Oracle',
   icon: 'lineicons:oracle',

@@ -14,9 +14,9 @@ const educationSectionData = {
       title: 'Degree in Computer Engineering',
       institution: 'Universidad de Cantabria',
       image: import('@/assets/logos/uc-logo.png'),
-      dates: [new Date('2018.09'), new Date('2021.07')],
+      dates: [new Date('2017.09'), new Date('2021.07')],
       description:
-        'Computer engineering specialized in Software. \n Focused on designing, developing, and optimizing software solutions, with a strong foundation in programming, databases, and system architecture.',
+        'Computer engineering specialized in Software. \n\n Focused on designing, developing, and optimizing software solutions, with a strong foundation in programming, databases, and system architecture.',
       links: [website({ url: 'https://web.unican.es/' })],
     },
   ],

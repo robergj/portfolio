@@ -1,6 +1,6 @@
 import type { CircleFlags, Fa6Brands, Fa6Solid, Ri, SimpleIcons } from 'iconify-icon-names';
 
-export type ExtraIconName = 'lineicons:oracle' | 'devicon:java' | 'logos:struts' | 'devicon:python';
+export type ExtraIconName = 'lineicons:oracle' | 'devicon:java' | 'logos:struts' | 'devicon:python' | 'fa:android';
 
 /**
  * Name of the icon from the iconify library.
