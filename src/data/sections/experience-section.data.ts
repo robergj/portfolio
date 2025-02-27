@@ -28,7 +28,7 @@ const experienceSectionData = {
   jobs: [
     {
       role: 'Full Stack Developer',
-      company: 'Grupo piñero',
+      company: 'Grupo Piñero',
       image: import('@/assets/logos/gp-logo.png'),
       dates: [new Date('2023-02'), new Date('2025-02')],
       description: `

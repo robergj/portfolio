@@ -6,7 +6,8 @@ export type ExtraIconName =
   | 'logos:struts'
   | 'devicon:python'
   | 'openmoji:flag-spain'
-  | 'openmoji:flag-united-kingdom';
+  | 'openmoji:flag-united-kingdom'
+  | 'fa:android';
 
 /**
  * Name of the icon from the iconify library.

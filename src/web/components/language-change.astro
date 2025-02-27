@@ -1,5 +1,7 @@
 ---
 import Icon from './icon.astro';
+
+const { name } = Astro.props;
 ---
 
 <!-- Botón para cambiar idioma -->
@@ -7,43 +9,31 @@ import Icon from './icon.astro';
   id="lang-toggle"
   aria-label="Language toggle"
   class="fixed bottom-18 left-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-400 shadow-xl transition focus:ring-primary-500 dark:bg-gray-800 dark:text-gray-200"
+  data-name={name}
 >
   <!-- Bandera de España: visible cuando el idioma es español -->
-  <Icon class="block dark:hidden" name="openmoji:flag-spain" size={20} />
+  <Icon class="block dark:hidden" name={name} size={20} />
   <!-- Bandera del Reino Unido: visible cuando el idioma es inglés -->
-  <Icon class="hidden dark:block" name="openmoji:flag-united-kingdom" size={20} />
+  <Icon class="hidden dark:block" name={name} size={20} />
 </button>
 
 <script>
-  const langToggle = document.getElementById('lang-toggle')!;
+  document.addEventListener('DOMContentLoaded', () => {
+    const langToggle = document.getElementById('lang-toggle');
+    const name = langToggle?.getAttribute('data-name');
 
-  const toggleLang = () => {
-    // Obtener el idioma actual desde localStorage o 'es' por defecto
-    const lang = localStorage.getItem('lang') ?? 'es';
+    if (name === 'openmoji:flag-spain') {
+      const redirectToEnglishPage = () => {
+        window.location.href = '/';
+      };
 
-    // Alternar entre español (es) e inglés (en)
-    const newLang = lang === 'es' ? 'en' : 'es';
+      langToggle?.addEventListener('click', redirectToEnglishPage);
+    } else {
+      const redirectToSpanishPage = () => {
+        window.location.href = '/es';
+      };
 
-    // Cambiar el meta tag de color si es necesario (esto puede usarse para otras configuraciones)
-    const langMeta = document.getElementsByName('lang-color') as NodeListOf<HTMLMetaElement>;
-    if (langMeta[0]) {
-      langMeta[0].content = newLang === 'en' ? '#1a202c' : '#ffffff'; // Cambia el color dependiendo del idioma
+      langToggle?.addEventListener('click', redirectToSpanishPage);
     }
-
-    // Cambiar la clase para aplicar estilos específicos para el idioma (si los tienes)
-    document.documentElement.classList[newLang === 'en' ? 'add' : 'remove']('english');
-
-    // Guardar el idioma en localStorage para persistencia
-    localStorage.setItem('lang', newLang);
-
-    // Cambiar la visibilidad de las banderas dependiendo del idioma
-    const flags = langToggle.getElementsByTagName('Icon');
-    for (let flag of flags) {
-      flag.classList.remove('block');
-      flag.classList.add('hidden');
-    }
-  };
-
-  // Añadir evento de clic para cambiar el idioma
-  langToggle.addEventListener('click', toggleLang);
+  });
 </script>

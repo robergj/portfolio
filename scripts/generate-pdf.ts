@@ -40,6 +40,7 @@ const main = async () => {
 
   await retry({
     promise: () => goTo(page, 'http://localhost:3000/pdf'),
+    //promise: () => goTo(page, 'http://localhost:3000/es/pdf'),
     retries: 5,
     retryTime: 1000,
   });

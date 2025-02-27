@@ -7,7 +7,7 @@ import MainSection from '@/pdf/sections/main-section.pdf.astro';
 import PortfolioSection from '@/pdf/sections/portfolio-section.pdf.astro';
 import SkillsSection from '@/pdf/sections/skills-section.pdf.astro';
 
-import cv from '@/data/index_eng';
+import cv from '@/data/index_esp';
 
 const { config, sections } = cv();
 
@@ -19,7 +19,7 @@ const shouldRenderSection = (section: keyof typeof sections) => sections[section
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>PDF preview</title>
+    <title>Vista previa PDF</title>
     <Fonts />
   </head>
   <body class="flex flex-col bg-white p-[10mm] print:p-0">

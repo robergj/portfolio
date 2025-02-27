@@ -14,7 +14,7 @@ const config = {
     title: 'Roberto González Jiménez - Desarrollador Full Stack',
     description:
       'Desarrollador Full Stack con 3 años de experiencia en el diseño e implementación de aplicaciones web robustas y escalables.',
-    faviconPath: '/src/assets/my-image.jpeg',
+    faviconPath: '/src/assets/my-image.jpg',
   },
   pdf: {
     footer:

@@ -4,9 +4,7 @@ import {
   astro,
   cypress,
   eslint,
-  mongoDb,
   prettier,
-  react,
   sass,
   python,
   tailwindCss,
@@ -25,6 +23,7 @@ import {
   spring,
   html,
   sourcetree,
+  android,
 } from '../helpers/skills';
 
 const skillsSectionData = {
@@ -57,11 +56,12 @@ const skillsSectionData = {
         prettier({ level: 3 }),
         eslint({ level: 2 }),
         astro({ level: 3 }),
+        android({ level: 3 }),
       ],
     },
     {
       title: 'Quiero aprender',
-      skills: [react(), python(), mongoDb(), sass(), cypress()],
+      skills: [python(), sass(), cypress()],
     },
     {
       title: 'Hablo',
