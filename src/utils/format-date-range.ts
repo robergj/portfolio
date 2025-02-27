@@ -1,5 +1,5 @@
 import { format, differenceInYears, differenceInMonths } from 'date-fns';
-import es from 'date-fns/locale/es';
+import { es } from 'date-fns/locale';
 import type { DateRange } from '@/types/shared';
 import config from '@/data/config_eng';
 
