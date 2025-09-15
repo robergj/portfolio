@@ -15,7 +15,10 @@ const formatDateRange = ([from, to]: DateRange): string => {
   const locale = lang === 'es' ? es : config.i18n.locale;
 
   const fromFormatted = format(from, dateFormat, { locale });
-  const toFormatted = to ? format(to, dateFormat, { locale }) : translations.now;
+  let toFormatted = to ? format(to, dateFormat, { locale }) : translations.now;
+  if (lang === 'es') {
+    toFormatted = to ? format(to, dateFormat, { locale }) : 'actualmente';
+  }
 
   const fromCapitalized = capitalizeFirstLetter(fromFormatted);
   const toCapitalized = capitalizeFirstLetter(toFormatted);
