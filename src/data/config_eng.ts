@@ -13,7 +13,7 @@ const config = {
   meta: {
     title: 'Roberto González Jiménez - Full Stack Developer',
     description:
-      'Full Stack Developer with 3 years of experience in designing and implementing robust and scalable web applications.',
+      'Full Stack Developer with 4 years of experience in designing and implementing robust and scalable web applications.',
     faviconPath: '/src/assets/my-image.jpg',
   },
   pdf: {

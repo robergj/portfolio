@@ -7,6 +7,7 @@ export type ExtraIconName =
   | 'devicon:python'
   | 'openmoji:flag-spain'
   | 'openmoji:flag-united-kingdom'
+  | 'teenyicons:c-sharp-outline'
   | 'fa:android';
 
 /**

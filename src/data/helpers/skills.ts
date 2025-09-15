@@ -73,6 +73,34 @@ export const intellijidea = createSkillFactory({
   url: 'https://www.jetbrains.com/idea/',
 });
 
+export const csharp = createSkillFactory({
+  name: 'C#',
+  icon: 'teenyicons:c-sharp-outline',
+  iconColor: '#c026d3',
+  url: 'https://dotnet.microsoft.com/es-es/languages/csharp/',
+});
+
+export const kubernetes = createSkillFactory({
+  name: 'Kubernetes',
+  icon: 'simple-icons:kubernetes',
+  iconColor: '#326CE5',
+  url: 'https://kubernetes.io/',
+});
+
+export const docker = createSkillFactory({
+  name: 'Docker',
+  icon: 'simple-icons:docker',
+  iconColor: '#2496ED',
+  url: 'https://www.docker.com/',
+});
+
+export const swagger = createSkillFactory({
+  name: 'Swagger',
+  icon: 'simple-icons:swagger',
+  iconColor: '#85EA2D',
+  url: 'https://swagger.io/',
+});
+
 export const maven = createSkillFactory({
   name: 'Maven',
   icon: 'simple-icons:apachemaven',

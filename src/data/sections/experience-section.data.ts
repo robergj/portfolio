@@ -3,6 +3,8 @@ import type { ReadonlyDeep } from 'type-fest';
 import { facebook, linkedin, website } from '../helpers/links';
 import {
   angular,
+  csharp,
+  docker,
   git,
   html,
   intellijidea,
@@ -10,11 +12,14 @@ import {
   javascript,
   jenkins,
   jquery,
+  kubernetes,
   maven,
   nodejs,
   oracle,
+  postgreSql,
   spring,
   struts,
+  swagger,
   typescript,
 } from '../helpers/skills';
 
@@ -26,6 +31,44 @@ const experienceSectionData = {
     visible: true,
   },
   jobs: [
+    {
+      role: 'Full Stack Developer',
+      company: 'CIC Consulting Informático',
+      image: import('@/assets/logos/cic-logo.png'),
+      dates: [new Date('2025-06'), null],
+      description: `
+        - Development and maintenance of web applications with Angular and TypeScript, ensuring clean architecture and responsive design.
+        - Implementation of backend services with Node.js, Java, and C#, focused on performance, scalability, and security.
+        - Database management in Oracle and PostgreSQL, guaranteeing data integrity and efficient query optimization.
+        - API design and documentation using Swagger, improving interoperability and developer experience.
+        - Containerization and orchestration with Docker and Kubernetes, enabling scalable and portable deployments.
+        - Build automation and dependency management with Maven, streamlining development workflows.
+        - Collaborative version control with Git, applying best practices in branching strategies and code reviews.
+        - Continuous integration and deployment pipelines to deliver high-quality solutions quickly and reliably.
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [
+          oracle(),
+          typescript(),
+          angular(),
+          git(),
+          java(),
+          csharp(),
+          nodejs(),
+          kubernetes(),
+          docker(),
+          postgreSql(),
+          swagger(),
+          maven(),
+        ],
+      },
+      links: [
+        website({ url: 'https://www.cic.es/' }),
+        facebook({ url: 'https://www.facebook.com/CIC.Consulting' }),
+        linkedin({ url: 'https://www.linkedin.com/company/cic-consulting-informatico/posts/?feedView=all' }),
+      ],
+    },
     {
       role: 'Full Stack Developer',
       company: 'Grupo Piñero',
