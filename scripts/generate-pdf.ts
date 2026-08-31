@@ -40,13 +40,25 @@ const main = async () => {
 
   await retry({
     promise: () => goTo(page, 'http://localhost:3000/pdf'),
-    //promise: () => goTo(page, 'http://localhost:3000/es/pdf'),
-    retries: 5,
-    retryTime: 1000,
+    retries: 20,
+    retryTime: 2000,
   });
 
   await pdfPage(page, {
     path: path.join(__dirname, '..', 'public', 'cv.pdf'),
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '10mm', right: '10mm', bottom: '10mm', left: '10mm' },
+  });
+
+  await retry({
+    promise: () => goTo(page, 'http://localhost:3000/es/pdf'),
+    retries: 20,
+    retryTime: 2000,
+  });
+
+  await pdfPage(page, {
+    path: path.join(__dirname, '..', 'public', 'cvEsp.pdf'),
     format: 'A4',
     printBackground: true,
     margin: { top: '10mm', right: '10mm', bottom: '10mm', left: '10mm' },
