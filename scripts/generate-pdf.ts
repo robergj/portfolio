@@ -1,7 +1,9 @@
-import { exec } from 'node:child_process';
 import * as path from 'node:path';
 import * as puppeteer from 'puppeteer';
 import { pdfPage } from 'puppeteer-report';
+
+// ponytail: base URL for pdf pages. Set SITE_URL=http://localhost:3000 to use a local dev server instead.
+const baseUrl = process.env.SITE_URL || 'https://robergj.netlify.app';
 
 const waitFor = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -30,8 +32,6 @@ const retry = async ({ promise, retries, retryTime }: RetryOptions): GoToReturn 
 };
 
 const main = async () => {
-  const child = exec('npm run dev');
-
   const browser = await puppeteer.launch({ headless: 'new' });
 
   const page = await browser.newPage();
@@ -39,7 +39,7 @@ const main = async () => {
   await page.setViewport({ width: 794, height: 1122, deviceScaleFactor: 2 });
 
   await retry({
-    promise: () => goTo(page, 'http://localhost:3000/pdf'),
+    promise: () => goTo(page, `${baseUrl}/pdf`),
     retries: 20,
     retryTime: 2000,
   });
@@ -52,7 +52,7 @@ const main = async () => {
   });
 
   await retry({
-    promise: () => goTo(page, 'http://localhost:3000/es/pdf'),
+    promise: () => goTo(page, `${baseUrl}/es/pdf`),
     retries: 20,
     retryTime: 2000,
   });
@@ -65,8 +65,6 @@ const main = async () => {
   });
 
   await browser.close();
-
-  child.kill();
 };
 
 main();
