@@ -96,7 +96,7 @@ const experienceSectionData = {
       role: 'Junior Full Stack Developer',
       company: 'Axpe Consulting',
       image: import('@/assets/logos/axpe-logo.jpg'),
-      dates: [new Date('2021-10'), new Date('2025-02')],
+      dates: [new Date('2021-08'), new Date('2023-02')],
       description: `
         - Development of web applications using Java and Struts, ensuring a robust and scalable architecture.
         - Implementation of dynamic interfaces with JavaScript, jQuery, and HTML to enhance user experience.
