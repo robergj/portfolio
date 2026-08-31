@@ -97,6 +97,7 @@ const experienceSectionData = {
       company: 'Axpe Consulting',
       image: import('@/assets/logos/axpe-logo.jpg'),
       dates: [new Date('2021-08'), new Date('2023-02')],
+      pageBreakBefore: true,
       description: `
         - Desarrollo de aplicaciones web utilizando Java y Struts, asegurando una arquitectura robusta y escalable.
         - Implementación de interfaces dinámicas con JavaScript, jQuery y HTML para mejorar la experiencia del usuario.

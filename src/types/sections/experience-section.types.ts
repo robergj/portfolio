@@ -26,6 +26,11 @@ export interface Job {
   dates: DateRange;
 
   /**
+   * [PDF] Force this job to start on a new page (with some top spacing).
+   */
+  pageBreakBefore?: boolean;
+
+  /**
    * A short overview of your job. You can use markdown syntax.
    */
   description: string;

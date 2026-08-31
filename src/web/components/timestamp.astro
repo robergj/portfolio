@@ -3,8 +3,10 @@ import Typography from './typography.astro';
 import formatDateRange from '@/utils/format-date-range';
 
 const { dates } = Astro.props;
+
+const lang = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
 ---
 
 <Typography variant="item-subtitle-secondary">
-  {formatDateRange(dates)}
+  {formatDateRange(dates, lang)}
 </Typography>

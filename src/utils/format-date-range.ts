@@ -1,24 +1,19 @@
 import { format, differenceInYears, differenceInMonths } from 'date-fns';
-import { es } from 'date-fns/locale';
+import { es, enUS } from 'date-fns/locale';
 import type { DateRange } from '@/types/shared';
-import config from '@/data/config_eng';
 
-const { dateFormat, translations } = config.i18n;
+const DATE_FORMAT = 'MMMM yyyy';
 
 const capitalizeFirstLetter = (string: string): string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const formatDateRange = ([from, to]: DateRange): string => {
-  const lang = localStorage.getItem('lang');
+const formatDateRange = ([from, to]: DateRange, lang: 'es' | 'en' = 'en'): string => {
+  const isEs = lang === 'es';
+  const locale = isEs ? es : enUS;
 
-  const locale = lang === 'es' ? es : config.i18n.locale;
-
-  const fromFormatted = format(from, dateFormat, { locale });
-  let toFormatted = to ? format(to, dateFormat, { locale }) : translations.now;
-  if (lang === 'es') {
-    toFormatted = to ? format(to, dateFormat, { locale }) : 'actualmente';
-  }
+  const fromFormatted = format(from, DATE_FORMAT, { locale });
+  const toFormatted = to ? format(to, DATE_FORMAT, { locale }) : isEs ? 'actualmente' : 'now';
 
   const fromCapitalized = capitalizeFirstLetter(fromFormatted);
   const toCapitalized = capitalizeFirstLetter(toFormatted);
@@ -26,19 +21,15 @@ const formatDateRange = ([from, to]: DateRange): string => {
   const years = differenceInYears(to || new Date(), from);
   const months = differenceInMonths(to || new Date(), from) % 12;
 
-  if (lang === 'es') {
-    const timeElapsed = [years > 0 ? `${years} años` : '', months > 0 ? `${months} meses` : '']
-      .filter(Boolean)
-      .join(', ');
+  const unit = isEs ? { years: 'años', months: 'meses' } : { years: 'years', months: 'months' };
+  const timeElapsed = [
+    years > 0 ? `${years} ${unit.years}` : '',
+    months > 0 ? `${months} ${unit.months}` : '',
+  ]
+    .filter(Boolean)
+    .join(', ');
 
-    return `${fromCapitalized} - ${toCapitalized} (${timeElapsed})`;
-  } else {
-    const timeElapsed = [years > 0 ? `${years} years` : '', months > 0 ? `${months} months` : '']
-      .filter(Boolean)
-      .join(', ');
-
-    return `${fromCapitalized} - ${toCapitalized} (${timeElapsed})`;
-  }
+  return `${fromCapitalized} - ${toCapitalized} (${timeElapsed})`;
 };
 
 export default formatDateRange;

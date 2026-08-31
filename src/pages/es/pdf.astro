@@ -22,15 +22,45 @@ const shouldRenderSection = (section: keyof typeof sections) => sections[section
     <title>Vista previa PDF</title>
     <Fonts />
   </head>
-  <body class="flex flex-col bg-white p-[10mm] print:p-0">
+  <body class="pdf-compact flex flex-col bg-white p-[10mm] print:p-0">
     {shouldRenderSection('main') && <MainSection {...sections.main} />}
     {shouldRenderSection('skills') && <SkillsSection {...sections.skills} />}
     <br />
     <br />
     {shouldRenderSection('experience') && <ExperienceSection {...sections.experience} />}
     {shouldRenderSection('education') && <EducationSection {...sections.education} />}
-    <br />
-    {shouldRenderSection('portfolio') && <PortfolioSection {...sections.portfolio} />}
+    {
+      shouldRenderSection('portfolio') && (
+        <div class="pdf-portfolio-tight -mt-4">
+          <PortfolioSection {...sections.portfolio} />
+        </div>
+      )
+    }
     {config.pdf?.footer && <Footer>{config.pdf.footer}</Footer>}
   </body>
+
+  <!-- Compacta el CV español ~8 líneas: menos aire en cabeceras de sección y divisores. Ajusta los rem si hace falta. -->
+  <style is:global>
+    .pdf-compact .pt-10 {
+      padding-top: 1rem;
+    }
+    .pdf-compact .pb-5 {
+      padding-bottom: 0.5rem;
+    }
+    .pdf-compact .py-5 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Proyectos: junta lo justo para ganar ~1 línea. Sube/baja los valores si hace falta. */
+    .pdf-portfolio-tight .pt-10 {
+      padding-top: 0.25rem;
+    }
+    .pdf-portfolio-tight .pb-5 {
+      padding-bottom: 0.25rem;
+    }
+    .pdf-portfolio-tight .description p {
+      margin-bottom: 12px;
+    }
+  </style>
 </html>

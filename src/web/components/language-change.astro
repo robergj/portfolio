@@ -20,20 +20,10 @@ const { name } = Astro.props;
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('lang-toggle');
-    const name = langToggle?.getAttribute('data-name');
+    const isSpanishPage = window.location.pathname.startsWith('/es');
 
-    if (name === 'openmoji:flag-spain') {
-      const redirectToEnglishPage = () => {
-        window.location.href = '/';
-      };
-
-      langToggle?.addEventListener('click', redirectToEnglishPage);
-    } else {
-      const redirectToSpanishPage = () => {
-        window.location.href = '/es';
-      };
-
-      langToggle?.addEventListener('click', redirectToSpanishPage);
-    }
+    langToggle?.addEventListener('click', () => {
+      window.location.href = isSpanishPage ? '/' : '/es';
+    });
   });
 </script>
