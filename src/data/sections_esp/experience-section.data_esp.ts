@@ -35,7 +35,7 @@ const experienceSectionData = {
       role: 'Desarrollador Full Stack',
       company: 'CIC Consulting Informático',
       image: import('@/assets/logos/cic-logo.png'),
-      dates: [new Date('2025-06'), null],
+      dates: [new Date('2025-06-01'), null],
       description: `
         - Desarrollo y mantenimiento de aplicaciones web con Angular y TypeScript, asegurando una arquitectura limpia y un diseño responsivo.
         - Implementación de servicios backend con Node.js, Java y C#, enfocados en rendimiento, escalabilidad y seguridad.
