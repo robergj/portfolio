@@ -8,7 +8,8 @@ export type ExtraIconName =
   | 'openmoji:flag-spain'
   | 'openmoji:flag-united-kingdom'
   | 'teenyicons:c-sharp-outline'
-  | 'fa:android';
+  | 'fa:android'
+  | 'ph:file-sql';
 
 /**
  * Name of the icon from the iconify library.

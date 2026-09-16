@@ -46,6 +46,13 @@ export const oracle = createSkillFactory({
   url: 'https://www.oracle.com/',
 });
 
+export const plsql = createSkillFactory({
+  name: 'PL/SQL',
+  icon: 'ph:file-sql',
+  iconColor: '#F05032',
+  url: 'https://www.oracle.com/es/database/technologies/appdev/plsql.html',
+});
+
 export const java = createSkillFactory({
   name: 'Java',
   icon: 'devicon:java',

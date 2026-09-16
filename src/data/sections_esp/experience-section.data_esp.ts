@@ -16,6 +16,7 @@ import {
   maven,
   nodejs,
   oracle,
+  plsql,
   postgreSql,
   spring,
   struts,
@@ -84,7 +85,7 @@ const experienceSectionData = {
       `,
       tagsList: {
         title: 'Tecnologías',
-        tags: [oracle(), typescript(), angular(), git(), java(), nodejs(), jenkins(), intellijidea(), maven()],
+        tags: [oracle(), plsql(), typescript(), angular(), git(), java(), nodejs(), jenkins(), intellijidea(), maven()],
       },
       links: [
         website({ url: 'https://www.grupo-pinero.com' }),

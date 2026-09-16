@@ -11,8 +11,8 @@ interface Target {
 }
 
 const TARGETS: Record<string, Target> = {
-  es: { path: '/es/pdf', file: 'cvEsp.pdf' },
-  en: { path: '/pdf', file: 'cv.pdf' },
+  es: { path: '/es/pdf', file: 'SpanishCv_RobertoGonzalez.pdf' },
+  en: { path: '/pdf', file: 'EnglishCv_RobertoGonzalez.pdf' },
 };
 
 const CHOICES: Record<string, Target[]> = {

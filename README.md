@@ -39,7 +39,7 @@ npm install
 #Run in development mode
 npm run dev
 
-#pdf (english)
+#pdf
 npm run generate-pdf
 
 ```

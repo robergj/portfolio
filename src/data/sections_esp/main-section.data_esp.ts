@@ -31,7 +31,7 @@ const mainSectionData = {
   ],
   action: {
     label: 'Descargar CV',
-    url: '/cvEsp.pdf',
+    url: '/SpanishCv_RobertoGonzalez.pdf',
     downloadedFileName: 'CV-Roberto_Gonzalez.pdf',
   },
   links: [
